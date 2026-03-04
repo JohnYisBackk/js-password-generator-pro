@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Password Generator Pro</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Password Generator Pro</h1>
+        <p class="subtitle">Vygeneruj silné heslo podľa tvojich pravidiel.</p>
+      </header>
+
+      <!-- OUTPUT -->
+      <section class="output">
+        <div class="output-row">
+          <input
+            type="text"
+            id="passwordOutput"
+            class="password-output"
+            value=""
+            placeholder="Tu sa zobrazí heslo.."
+            readonly
+          />
+
+          <button id="copyBtn" class="btn btn-secondary" type="button">
+            Copy
+          </button>
+        </div>
+
+        <!-- status text  -->
+        <p id="statusText" class="status" aria-live="polite"></p>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="settings">
+        <h2 class="section-title">Nastavenia</h2>
+
+        <!-- Length -->
+        <div class="settings">
+          <div class="setting-row">
+            <label for="lengthRange" class="label"
+              >Dĺžka hesla:
+              <strong><span id="lengthValue">12</span></strong>
+            </label>
+          </div>
+
+          <input
+            type="range"
+            id="lengthRange"
+            class="range"
+            min="4"
+            max="32"
+            value="12"
+          />
+        </div>
+
+        <!-- Options -->
+        <div class="options">
+          <label class="option">
+            <input type="checkbox" id="optLowercase" checked />
+            <span>Malé pismená (a-z)</span>
+          </label>
+
+          <label class="option">
+            <input type="checkbox" id="optUppercase" checked />
+            <span>Veľké písmená (A-Z)</span>
+          </label>
+
+          <label class="option">
+            <input id="optNumbers" type="checkbox" checked />
+            <span>Čísla (0-9)</span>
+          </label>
+
+          <label class="option">
+            <input id="optSymbols" type="checkbox" />
+            <span>Symboly (!@#$…)</span>
+          </label>
+
+          <!-- Bonus option -->
+          <label class="option">
+            <input id="optNoSimilar" type="checkbox" />
+            <span>Bez podobných znakov (O/0, l/1, I)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- STRENGTH -->
+      <section class="strength">
+        <h2 class="section-title">Sila hesla</h2>
+
+        <div class="strength-row">
+          <div class="strength-bar">
+            <div
+              id="strengthFill"
+              class="strength-fill"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+
+          <span id="strengthLabel" class="strength-label">—</span>
+        </div>
+
+        <p class="hint">
+          Tip: Kombinuj veľké/malé písmená, čísla a symboly + dĺžku aspoň 12.
+        </p>
+      </section>
+
+      <!-- ACTIONS -->
+      <section class="actions">
+        <button id="generateBtn" class="btn btn-primary" type="button">
+          Generate Password
+        </button>
+
+        <button id="resetBtn" class="btn btn-ghost" type="button">Reset</button>
+      </section>
+
+      <!-- SMALL FOOTER -->
+      <footer class="footer">
+        <small>© <span id="year"></span> Password Generator Pro</small>
+      </footer>
+    </div>
+  </body>
+</html>
