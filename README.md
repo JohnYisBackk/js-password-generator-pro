@@ -53,17 +53,6 @@ git clone https://github.com/YOUR_USERNAME/password-generator-pro.git
 
 ---
 
-## 📸 Preview
-
-You can add a screenshot or GIF of the project here.
-
-Example:
-
-```
-/preview.png
-```
-
----
 
 ## 💡 Learning Purpose
 
